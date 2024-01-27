@@ -61,7 +61,7 @@ export function SampleLineChart({ trend = "up" }: { trend?: "up" | "down" }) {
 
 export function Preview() {
   return (
-    <div className="md:col-span-2 xl:col-span-2 flex gap-4 md:flex-wrap max-w-full overflow-x-scroll">
+    <div className="md:col-span-2 xl:col-span-2 flex gap-4 md:flex-wrap max-w-full overflow-x-scroll md:overflow-hidden">
       <PreviewCard title="Total Order" value="350" trend="up" />
       <PreviewCard
         icon={I3DRotate}

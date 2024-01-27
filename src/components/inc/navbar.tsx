@@ -32,7 +32,7 @@ export function Navbar() {
         </h1>
         <Actions />
       </div>
-      <div className="md:hidden flex px-3 py-2 items-center bg-slate-2 dark:bg-slatedark-2 border border-slate-4 dark:border-slatedark-4">
+      <div className="md:hidden flex justify-between px-3 py-2 items-center bg-slate-2 dark:bg-slatedark-2 border border-slate-4 dark:border-slatedark-4">
         <Logo aria-label="Logo" height={40} width={40} />
         <div className="flex gap-1">
           <Button variant="outline" size="icon" className="rounded-full">
@@ -54,6 +54,26 @@ export function Navbar() {
               className="text-slate-11 dark:text-slatedark-11"
             />
           </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="outline"
+                className="rounded-full gap-1 p-1 pr-2"
+              >
+                <img
+                  src="./images/avatar.png"
+                  alt="avatar"
+                  className="rounded-full h-8 w-8"
+                />
+
+                <ArrowDown2 size="16" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-32 md:w-56">
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </>

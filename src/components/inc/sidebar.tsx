@@ -83,12 +83,16 @@ export function Sidebar() {
   );
 }
 
-function ThemeToggle() {
+export function ThemeToggle({ horizontal }: { horizontal?: boolean }) {
   const { theme, toggleTheme } = useTheme();
   return (
     <button
       onClick={toggleTheme}
-      className="bg-slate-1 dark:bg-slatedark-1 rounded-full p-1 flex flex-col gap-2"
+      className={cn(
+        "bg-slate-1 dark:bg-slatedark-1 rounded-full p-1 flex gap-2",
+
+        horizontal ? "flex-row min-w-[80px]" : "flex-col "
+      )}
     >
       <span className="sr-only">Toggle between light and dark mode</span>
       <div className="relative hover:bg-slate-3 dark:hover:bg-slatedark-3 rounded-full w-full aspect-square flex items-center justify-center">
@@ -101,7 +105,9 @@ function ThemeToggle() {
         <Sun
           className={cn(
             "relative z-[2]",
-            theme === "light" ? "text-slate-2 dark:text-slatedark-2" : "text-slate-11 dark:text-slatedark-11"
+            theme === "light"
+              ? "text-slate-2 dark:text-slatedark-2"
+              : "text-slate-11 dark:text-slatedark-11"
           )}
         />
       </div>
@@ -115,7 +121,9 @@ function ThemeToggle() {
         <Moon
           className={cn(
             "relative z-[2]",
-            theme === "dark" ? "text-slate-2 dark:text-slatedark-2" : "text-slate-11 dark:text-slatedark-11"
+            theme === "dark"
+              ? "text-slate-2 dark:text-slatedark-2"
+              : "text-slate-11 dark:text-slatedark-11"
           )}
         />
       </div>
@@ -141,7 +149,9 @@ function SibebarButton({
             variant="ghost"
             className={cn(
               " p-0 h-10 w-10 items-center justify-center relative",
-              active ? "text-slate-12 dark:text-slatedark-12" : "text-slate-11 dark:text-slatedark-11"
+              active
+                ? "text-slate-12 dark:text-slatedark-12"
+                : "text-slate-11 dark:text-slatedark-11"
             )}
             onClick={setActive}
           >
@@ -155,7 +165,11 @@ function SibebarButton({
             <Icon variant={active ? "Bulk" : "Broken"} size="24" />
           </Button>
         </TooltipTrigger>
-        <TooltipContent sideOffset={8} side="right" className="capitalize font-semibold">
+        <TooltipContent
+          sideOffset={8}
+          side="right"
+          className="capitalize font-semibold"
+        >
           {name}
         </TooltipContent>
       </Tooltip>

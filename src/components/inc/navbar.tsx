@@ -22,6 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import Logo from "@/assets/icons/logo.svg?react";
+import { ThemeToggle } from "./sidebar";
 
 export function Navbar() {
   return (
@@ -35,6 +36,7 @@ export function Navbar() {
       <div className="md:hidden flex justify-between px-3 py-2 items-center bg-slate-2 dark:bg-slatedark-2 border border-slate-4 dark:border-slatedark-4">
         <Logo aria-label="Logo" height={40} width={40} />
         <div className="flex gap-1">
+          <ThemeToggle horizontal/>
           <Button variant="outline" size="icon" className="rounded-full">
             <SearchNormal1
               size={18}

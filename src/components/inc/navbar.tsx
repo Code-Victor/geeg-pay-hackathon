@@ -99,7 +99,7 @@ function Actions() {
           placeholder="Search"
         />
       </div>
-      <Button variant="outline" size="icon" className="rounded-full">
+      <Button variant="outline" size="icon" className="rounded-full lg:hidden">
         <SearchNormal1
           size={18}
           className="text-slate-10 dark:text-slatedark-10"

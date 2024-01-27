@@ -1,4 +1,3 @@
-import React from "react";
 import { Maingrid, Sidebar } from "@/components/inc";
 import { Toaster } from "sonner";
 function App() {

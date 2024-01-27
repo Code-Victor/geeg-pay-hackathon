@@ -15,22 +15,54 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import Logo from "@/assets/icons/logo.svg?react";
 
 export function Navbar() {
   return (
-    <div className="border-b border-slate-4 p-5 dark:border-slatedark-4 flex justify-between items-center">
-      <h1 className="text-slate-12 dark:text-slatedark-12 font-bold text-2xl">
-        Dashboard
-      </h1>
-      <Actions />
-    </div>
+    <>
+      <div className="hidden md:flex border-b border-slate-4 p-5 dark:border-slatedark-4 md:justify-between md:items-center">
+        <h1 className="text-slate-12 dark:text-slatedark-12 font-bold text-2xl">
+          Dashboard
+        </h1>
+        <Actions />
+      </div>
+      <div className="md:hidden flex px-3 py-2 items-center bg-slate-2 dark:bg-slatedark-2 border border-slate-4 dark:border-slatedark-4">
+        <Logo aria-label="Logo" height={40} width={40} />
+        <div className="flex gap-1">
+          <Button variant="outline" size="icon" className="rounded-full">
+            <SearchNormal1
+              size={18}
+              className="text-slate-10 dark:text-slatedark-10"
+            />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+            onClick={() =>
+              toast.info("No notifications for you today", { duration: 3000 })
+            }
+          >
+            <Notification
+              size={18}
+              className="text-slate-11 dark:text-slatedark-11"
+            />
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }
 function Actions() {
   return (
-    <div className="flex items-center gap-5">
-      <div className="flex border items-center border-slate-6 dark:border-slatedark-6 rounded-full p-3">
+    <div className="flex items-center md:gap-1 lg:gap-5">
+      <div className="hidden lg:flex border items-center border-slate-6 dark:border-slatedark-6 rounded-full p-3">
         <label htmlFor="full-page-search" className="h-5 w-5">
           <span className="sr-only">Search for something in the dashboard</span>
           <SearchNormal1
@@ -45,6 +77,12 @@ function Actions() {
           placeholder="Search"
         />
       </div>
+      <Button variant="outline" size="icon" className="rounded-full">
+        <SearchNormal1
+          size={18}
+          className="text-slate-10 dark:text-slatedark-10"
+        />
+      </Button>
       <DatePicker />
       <Button
         variant="outline"
@@ -63,7 +101,7 @@ function Actions() {
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="lg" className="rounded-full gap-2">
             <img
-              src="https://avatars.githubusercontent.com/u/35899857?v=4"
+              src="./images/avatar.png"
               alt="avatar"
               className="rounded-full h-8 w-8"
             />

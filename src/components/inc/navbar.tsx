@@ -15,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../ui/dropdown-menu";
 
 export function Navbar() {
   return (
@@ -58,22 +59,30 @@ function Actions() {
           className="text-slate-11 dark:text-slatedark-11"
         />
       </Button>
-      <Button variant="outline" size="lg" className="rounded-full gap-2">
-        <img
-          src="https://avatars.githubusercontent.com/u/35899857?v=4"
-          alt="avatar"
-          className="rounded-full h-8 w-8"
-        />
-        <div className="flex flex-col">
-          <span className="text-slate-12 dark:text-slatedark-12">
-            Justin Bergson
-          </span>
-          <span className="text-slate-10 dark:text-slatedark-10">
-            Justin@gmail.com
-          </span>
-        </div>
-        <ArrowDown2 size="16"  />
-      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" size="lg" className="rounded-full gap-2">
+            <img
+              src="https://avatars.githubusercontent.com/u/35899857?v=4"
+              alt="avatar"
+              className="rounded-full h-8 w-8"
+            />
+            <div className="flex flex-col">
+              <span className="text-slate-12 dark:text-slatedark-12">
+                Justin Bergson
+              </span>
+              <span className="text-slate-10 dark:text-slatedark-10">
+                Justin@gmail.com
+              </span>
+            </div>
+            <ArrowDown2 size="16" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-32 md:w-56">
+          <DropdownMenuItem>Profile</DropdownMenuItem>
+          <DropdownMenuItem>Logout</DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }

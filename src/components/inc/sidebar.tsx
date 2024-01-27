@@ -56,7 +56,7 @@ type NavButton = (typeof navButtons)[number];
 export function Sidebar() {
   const [active, setActive] = React.useState<NavButton["name"]>("dashboard");
   return (
-    <div className="bg-slate-2 dark:bg-slatedark-2 p-5 flex flex-col gap-5 border-r border-slate-4 dark:border-slatedark-4">
+    <div className="bg-slate-3 dark:bg-slatedark-3 p-5 hidden md:flex flex-col gap-5 border-r border-slate-4 dark:border-slatedark-4">
       <a href="#">
         <Logo aria-label="Logo" height={40} width={40} />
       </a>
@@ -88,7 +88,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="bg-slate-1 dark:bg-slatedark-1 border border-slate-8 darK:border-slatedark-8  rounded-full p-1 flex flex-col gap-2"
+      className="bg-slate-1 dark:bg-slatedark-1 rounded-full p-1 flex flex-col gap-2"
     >
       <span className="sr-only">Toggle between light and dark mode</span>
       <div className="relative hover:bg-slate-3 dark:hover:bg-slatedark-3 rounded-full w-full aspect-square flex items-center justify-center">

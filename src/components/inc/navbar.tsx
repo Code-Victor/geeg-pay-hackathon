@@ -22,7 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import Logo from "@/assets/icons/logo.svg?react";
-import { ThemeToggle } from "./sidebar";
+import { ThemeToggle, navButtons } from "./sidebar";
 
 export function Navbar() {
   return (
@@ -33,10 +33,24 @@ export function Navbar() {
         </h1>
         <Actions />
       </div>
+      {/* Mobile Navigation */}
       <div className="md:hidden flex justify-between px-3 py-2 items-center bg-slate-2 dark:bg-slatedark-2 border border-slate-4 dark:border-slatedark-4">
-        <Logo aria-label="Logo" height={40} width={40} />
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <Logo aria-label="Logo" height={40} width={40} />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-32 md:w-56">
+            {navButtons.map(({ icon: Icon, name }) => (
+              <DropdownMenuItem >
+                {<Icon variant="Bulk" />}
+                <span className="capitalize ml-2">{name}</span>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
         <div className="flex gap-1">
-          <ThemeToggle horizontal/>
+          <ThemeToggle horizontal />
           <Button variant="outline" size="icon" className="rounded-full">
             <SearchNormal1
               size={18}
@@ -58,10 +72,7 @@ export function Navbar() {
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="rounded-full gap-1 p-1 pr-2"
-              >
+              <Button variant="outline" className="rounded-full gap-1 p-1 pr-2">
                 <img
                   src="./images/avatar.png"
                   alt="avatar"

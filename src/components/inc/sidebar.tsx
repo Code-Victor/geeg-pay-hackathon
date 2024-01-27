@@ -25,7 +25,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/providers/themeProvider";
 
-const navButtons = [
+export const navButtons = [
   {
     icon: Category,
     name: "dashboard",

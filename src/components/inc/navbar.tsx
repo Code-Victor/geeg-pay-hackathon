@@ -41,7 +41,7 @@ export function Navbar() {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-32 md:w-56">
             {navButtons.map(({ icon: Icon, name }) => (
-              <DropdownMenuItem >
+              <DropdownMenuItem key={name}>
                 {<Icon variant="Bulk" />}
                 <span className="capitalize ml-2">{name}</span>
               </DropdownMenuItem>

@@ -22,7 +22,7 @@ import { sales } from "@/data";
 
 export function SalesTrends() {
   return (
-    <div className="md:col-span-2 xl:col-span-3 bg-slate-1 flex flex-col dark:bg-slatedark-1 border border-slate-4 dark:border-slatedark-4 rounded-[14px] py-4 px-5">
+    <div className="md:col-span-2 xl:col-span-3 bg-slate-1 flex flex-col gap-2 dark:bg-slatedark-1 border border-slate-4 dark:border-slatedark-4 rounded-[14px] py-4 px-5">
       <div className="flex items-center justify-between">
         <h2 className="font-semibold text-xl text-slate-12 dark:text-slatedark-12">
           Sales Trends

@@ -1,11 +1,9 @@
-import React from "react";
 import mockData from "@/data/MOCK_DATA.json";
 import { cn, getAvatar } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { DocumentDownload } from "iconsax-react";
 
 export function DataTable({ full }: { full?: boolean }) {
-  console.log(mockData);
   return (
     <>
       <div className="divide-y md:hidden divide-slate-4 dark:divide-slatedark-4">
@@ -24,7 +22,7 @@ export function DataTable({ full }: { full?: boolean }) {
                   {d.name}
                 </div>
               </div>
-              <div className="flex-1 text-slate-10 dark:text-slatedark-10">
+              <div className="flex-1 text-center text-slate-10 dark:text-slatedark-10">
                 {new Date(d.date).toLocaleDateString("en-UK", {
                   month: "short",
                   day: "numeric",
@@ -33,14 +31,14 @@ export function DataTable({ full }: { full?: boolean }) {
               </div>
             </div>
             <div className="flex items-baseline">
-              <div className="flex-1 text-slate-12 dark:text-slatedark-12">
+              <div className="flex-1 text-center text-slate-12 dark:text-slatedark-12">
                 {d.amount.toLocaleString("en-US", {
                   style: "currency",
                   currency: "USD",
                   minimumFractionDigits: 0,
                 })}
               </div>
-              <div className="flex-1">
+              <div className="flex-1 text-center">
                 <span
                   className={cn(
                     "capitalize text-center",

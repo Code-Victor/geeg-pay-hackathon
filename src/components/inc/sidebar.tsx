@@ -56,7 +56,7 @@ type NavButton = (typeof navButtons)[number];
 export function Sidebar() {
   const [active, setActive] = React.useState<NavButton["name"]>("dashboard");
   return (
-    <div className="bg-slate-2 dark:bg-slatedark-2 p-5 flex flex-col gap-5 ">
+    <div className="bg-slate-2 dark:bg-slatedark-2 p-5 flex flex-col gap-5 border-r border-slate-4 dark:border-slatedark-4">
       <a href="#">
         <Logo aria-label="Logo" height={40} width={40} />
       </a>
@@ -140,7 +140,7 @@ function SibebarButton({
           <Button
             variant="ghost"
             className={cn(
-              "p-0 h-10 w-10 items-center justify-center relative",
+              " p-0 h-10 w-10 items-center justify-center relative",
               active ? "text-slate-12 dark:text-slatedark-12" : "text-slate-11 dark:text-slatedark-11"
             )}
             onClick={setActive}
